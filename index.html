@@ -2,12 +2,13 @@
 <html>
 <head>
 	<title>Armin's CV</title>
-	<meta charset="UTF-8" /> 
+	<meta charset="UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="icon" href="img/ea.png" />
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" /><!-- css -->
 	<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script><!-- vue -->
 	<script src="https://code.jquery.com/jquery-3.5.0.js"></script><!-- jquery -->
+	<script type="text/javascript" src="jquery.lazy.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /><!-- Fancybox -->
 	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><!-- Also Fancybox -->
 	<!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script><!-- aframe -->
@@ -83,17 +84,17 @@
 	<section>
 		<h1>Monoprice Select Mini V2</h1>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0020.jpg" title="">
-			<img class="img_center" src="img/3dprint/3dprint-0020.jpg" alt=""></img>
+			<img class="img_center" loading="lazy" src="img/3dprint/3dprint-0020.jpg" alt=""></img>
 		</a>
 		<p>Recently I did the 3D printer course at my local maker-space, where they've got a bunch of Ultimakers. While I had great success at managing lasercuts in the allotted time, I felt uneasy about the possibility of letting a failed print run for 20 hours. Not knowing much about the topic, I also feared it would be hard for me to experiment with all the variables, like bed temperature, extrusion temperature, etc. But I also couldn't justify spending close to $1000 dollars for a 3D printer that I can just use for free at the maker-space. So when I came across the MPSMV2 on Conrad, I basically impulse-bought it. I don't usually buy stuff on the first day of discovery, but after seeing that the MonoPrice model has a heated bed and is compatible with CURA (the slicer program for the Ultimaker printers), I was convinced it's good enough for experimentation. €180 in my view is cheap enough to warrant not-perfect printing quality for the sake of experimentation. If ever in my life I plan to use or buy a serious printer, I'll know the ins and outs, because I'll have sat considerable hours working with and staring at a maker-grade one.</p>
 		<h2>First prints with PLA</h2>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0029.jpg" title="">
-			<img class="img_left" src="img/3dprint/3dprint-0029.jpg" alt=""></img>
+			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0029.jpg" alt=""></img>
 		</a>
 		<p>I've had impressively few failed prints with PLA. The standard settings in Cura are great, and the only thing I've changed was the printhead temperature, which I lowered by 5°C to 195°C improve on stringing.</p>
 		<p>With the size of the machine, it fits on my tiny desk. The only trick I engaged is printing some spool holder bearing that let me put the spool on top of one of the speakers. Naturally, the bed-size is small as well. I did anticipate some extra work to make designs work that don't fit inside the working area of 120*120*120mm. But I hadn't truly considered the fact that a standard 6.25U spacebar would barely fit inside it (6.25*19.05=119.0625mm) until I had it stand on my desk.</p>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0028.jpg" title="">
-			<img class="img_right" src="img/3dprint/3dprint-0028.jpg" alt=""></img>
+			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0028.jpg" alt=""></img>
 		</a>
 		<p>Because of the size, when i designed a test plate to see Cherry Stabilizers in action, I ended up having to cut corners (sorry). Rotating it by 45 degrees would make it fit, and now I've got a <a href="http://www.keyboard-layout-editor.com/##@_name=Stabilizer Test%3B&@_x:0.5&w:1.5%3B&=Tab&=Q&=W&_x:0.25&w:1.25&h:2&w2:1.5&h2:1&x2:-0.25%3B&=Enter%3B&@_x:0.5&w:2%3B&=Backspace&_w:1.75%3B&=Caps Lock%3B&@_a:7&w:6.25%3B&=">stupid layout</a> that allows me to see how different width keys will work out. I'm especially worried about the ISO Enter key about which I couldn't find any real info. There's no documentation I could find about where to place the switch underneath it, so I ended up reverse-engineering some open course PCBs, but I still want to see it in real life before ordering my own plate and PCB.</p>
 		<p>In action it's too loud tolet me comfortably sleep in the same room, so currently I'm not printing through the night. But it's not too loud to make me want to leave the computer during the day. Although I'll admit I'm biased; I enjoy watching the thing, and intercepting failed prints early on.</p>
@@ -101,29 +102,29 @@
 		<p>Firstly, the first layer always gets squished a bit, which I tend to fix with a box cutter, when exact measurements matter. Later I learned it's called Elephant Foot, and the Prusa Slicer <a href="https://youtu.be/wy3u4DNh_XQ?t=50">adresses it</a> on default now. Fortunately I don't care about it enough to look up whether Cura has a similar feature or not.</p>
 		<p>Secondly, I had to re-drill some holes in post, as they came out too small. And since PLA has a relatively low melting temperature, it isn't well suited for machining. So I decided to print a test geometry to see whether inaccuracies are "reliable", because then I could account for it in the design.</p>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0031.jpg" title="">
-			<img class="img_center" src="img/3dprint/3dprint-0031.jpg" alt=""></img>
+			<img class="img_center" loading="lazy" src="img/3dprint/3dprint-0031.jpg" alt=""></img>
 		</a>
 		<p>Sure enough, all the holes are about 0.2mm smaller, and all the outer dimensions are about 0.1mm thicker. That means if I want an M5 screw to thightly grip the material, a 5mm drill hole will work. And if I need it to loosely fit inside it, the drill hole better be 5.2-5.4mm in diameter.</p>
 		<h2>Some hardship with ABS</h2>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0022.jpg" title="">
-			<img class="img_left" src="img/3dprint/3dprint-0022.jpg" alt="Benchy Cabriolet with ABS"></img>
+			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0022.jpg" alt="Benchy Cabriolet with ABS"></img>
 		</a>
 		<p>Not long after the first successes I decided I have to buy a few more spools with other colors, because this is fun. So I read some not-enough amount about the differences in filament material, and decided to buy ABS filament this time.</p>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0033.jpg" title="">
-			<img class="img_right" src="img/3dprint/3dprint-0033.jpg" alt=""></img>
+			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0033.jpg" alt=""></img>
 		</a>
 		<p>I knew ABS needs higher temperatures, and that it's subject to warping, but I hadn't really anticipated how annoying warping would be. To be honest, I was more worried about the supposedly 80-90°C bed temperatures that were recommended everywhere, despite the default Cura setting being 75°C.</p>
 		<p>Benchy did great at first, and I was happy with the result, until the roof broke off for seemingly no reason. I quickly learned I had to put tape on the head cooler, otherwise the extruded material would warp and/or harden too soon, and not stick on small surfaces, like the B pillar of Benchy.</p>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0026.jpg" title="">
-			<img class="img_left" src="img/3dprint/3dprint-0026.jpg" alt=""></img>
+			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0026.jpg" alt=""></img>
 		</a>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0027.jpg" title="">
-			<img class="img_right" src="img/3dprint/3dprint-0027.jpg" alt=""></img>
+			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0027.jpg" alt=""></img>
 		</a>
 		<p>I managed to print some Cherry-style keycaps for my <a href="https://docs.keeb.io/bdn9-build-guide/">BDN9 inspired</a> hand wired macro pad. There's some sk6812 backlights installed, as I intend to test a number of <a href="https://qmk.fm/">QMK features</a> before I truly buy myself into the mechanical keyboard hobby. I've discovered one of my arduinos is a micro one, with an Atmel processor, which is supported by QMK. I was happy to discover this, because I initially didn't think there was a simple/cheap way for me to test the flashing and configuring of QMK, but things I already have at home are cheap, so this is great!</p>
 		<p>The <a href="https://www.thingiverse.com/thing:1573333">Cherry MX keycap</a> .stl file I found on Thingiverse proved to be impossible to slice in a smooth way. There's some advances on this front to be read about from <a href="https://tams.informatik.uni-hamburg.de/research/3d-printing/nonplanar_printing/index.php">Hamburg</a>, but no quick and easy way for me to try yet.</p>
 		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0023.jpg" title="">
-			<img class="img_right" src="img/3dprint/3dprint-0023.jpg" alt=""></img>
+			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0023.jpg" alt=""></img>
 		</a>
 		<p>Sadly though, I failed four times on an smd tray. The first few layers seem to stick fine, but as the walls cool off, they introduce enough tension to tear up the corners later. Not sure how to go about this. I'm considering changing the geometry in a way where it's less affected by the warping of later layers, but now I miss the simplicity of PLA. PETG is said to unify advantages of both, but for now I want to try and make ABS work. I can semi-reliably print smaller parts at least, so that's a start!</p>
 		<p class="posted_on">&middot; 2020-04-11 &middot;</p>
@@ -132,7 +133,7 @@
 		
 	<section>
 		<h1>Audi internship</h1>
-		<img class="img_right" title="Source: https://twitter.com/Audi/status/1122183628874747910" src="img/audi.jpg"></img>
+		<img class="img_right" loading="lazy" title="Source: https://twitter.com/Audi/status/1122183628874747910" src="img/audi.jpg"></img>
 		<p>After I won a scholarship from Audi Hungária, which helped me finance my 5th. semester in Kalrsruhe, they were happy to later see me apply for an internship.</p>
 		<p>So I became an engineering intern at the electric drivetrain manufacturing section. Our team worked out the nuances of manufacturing technology, which led up to the opening of the electric motor factory in the summer of 2018.</p>
 		<p>In the first few weeks I familiarized myself with the testing machines and operated them at times. This includes high voltage tests at various stages of assembling, leakage tests and an overview of the workings of the break tester.</p>
@@ -146,15 +147,15 @@
 	<section>
 		<h1>Micromouse competition</h1>
 		<p>In 2017 a friend of mine and I decided to participate in the micromouse competition that was organized mostly by our university.</p>
-		<img class="img_left" title="" src="img/micromouse_early.jpg"></img>
+		<img class="img_left" loading="lazy" title="" src="img/micromouse_early.jpg"></img>
 		<p>First we decided on a rounded form factor for easy turning, and we designed to be narrow enough to be able to go diagonally in the labirinth, which still makes me chuckle a little bit.</p>
 		<p>We went through many design iterations in NI Ultiboard, until we were confident enough to order the PCB. Then came the soldering part, which needed many tries, and seemed even near impossible at times. I think it took us 4 mice to get the hang out of it, and at that point any one of us was quick to assemble a fifth one in a few hours.</p>
-		<img class="img_right" title="" src="img/stm32.png"></img>
+		<img class="img_right" loading="lazy" title="" src="img/stm32.png"></img>
 		<p>STMCubeMX and Keil were our software of choice, which we used to initialize the processor, and to program it. In the world of $5 Arduinos it's actually amazing, how hard it is to get something like this to work from the ground up. But ultimately we managed to implement a PD Control on the otherwise erratic motors, and had the mouse go straight. We were also able to read sensor data (IR, Gyro, magnetic encoders). The picture on the left shows the actual pinout of our mouse.</p>
-		<img class="img_left" title="" src="img/micromouse_dev.jpg"></img>
+		<img class="img_left" loading="lazy" title="" src="img/micromouse_dev.jpg"></img>
 		<p>The sensor readings seemed promising: we did tests in different light conditions, and the powerful IR emitters proved to be very confident, and showed a consistent curve. The range between 1-10cm is useful for measuring distance, before and after that the resolution won't hold up. The motor drivers seemed linear, even thought the motors themselves disagreed.</p>
 		<p>Here's the final runner:</p>
-		<img class="img_center" title="" src="img/micromouse_late.jpg"></img>
+		<img class="img_center" loading="lazy" title="" src="img/micromouse_late.jpg"></img>
 		<p class="posted_on">&middot; 2019-02-16 &middot;</p>
 		<div class="clear" style="clear:both"></div>
 	</section>
@@ -162,7 +163,7 @@
 	<section>
 		<h1>Breathing Budapest</h1>
 		<p>Seeing the work of <a href="https://tjukanov.org/">Tjukanov</a> I was inspired to use the public transport data of Budapest, and visualize the activity through the day. Here's the result:</p>
-		<video class="img_center" controls muted loop>
+		<video class="img_center" loading="lazy" controls muted loop>
 			<source src="img/breathing_budapest.mp4" type="video/mp4">
 				<p>Your browser does not support the video tag.</p>
 		</video>
@@ -175,7 +176,7 @@
 			
 	<section>
 		<h1>Smart IoT Christmastree</h1>
-		<img class="img_center" src="img/smarttree.jpg" />
+		<img class="img_center" loading="lazy" src="img/smarttree.jpg" />
 		<p>Summed up in one word, it's an off-the-grid, Bluetooth LE Smart Christmastree, running on Arduino and Raspberry Pi wirelessly in turns. It's fully off-the-grid, and has a charging time of <font face="Courier">405 Method Not Allowed</font> seconds. The individual LEDs are seperately addressed via blockchain technology.</p>
 		<p>There's a neural network running silently in circles, which enables the user to use the christmastree as a one-way chatbot, for when you just want no interrupts to happen.</p>
 		<p>Some cons, that I'm still trying to figure out: The resemblence to a real christmas tree places my project in the middle of the uncanny valley, which is why it's so well received in Japan.</p>
