@@ -67,14 +67,26 @@
 		<h1>Let me introduce myself</h1>
 		<img class="img_left" src="img/profile_vue.jpg" />
 		<p>I'm 23 years old, hungarian, currently living in Munich, Germany.</p>
-		<p>Since October 2018 I'm enrolled at the Technical University of Munich (TUM) working on my Robotics, Cogniton, Intelligence Master's. While the theoreticals are great (and I really honestly am amazed at the quality of lectures), I recently started acquiring some technical knowledge in the <a href="https://maker-space.de/">maker-space</a>. Some interesting projects may follow.</p>
-		<p>Before that, I finished my Mechatronical Engineering Bachelor's degree at the Technical University Budapest (BME), including one Semester that I spent in Karlsruhe (KIT). In these years I met the most amazing and interesting people, built long lasting friendships, and our core group still meets up regularly.</p>
+		<p>Since October 2018 I'm enrolled at the Technical University of Munich (TUM) working on my Robotics, Cogniton, Intelligence Master's. Apart from that I've been working part time as a web-designer (mostly front end dashboard design, and some php, mysql) for 8 months. After that I joined the TDK Europe R&D center in Munich, where I've been designing PCBs, and developing Texas Instruments RF chips.</p>
+		<p>Before TUM, I got my BSc degree as a Mechatronical Engineer at the Technical University Budapest (BME), including having spent one semester in Karlsruhe (KIT). In these years I met the most amazing and interesting people, built long lasting friendships, and our core group still meets up regularly.</p>
 		<h2>Some interesting work of mine</h2>
-		<p>Since highschool I'm drawn to web development. I tought myself html5 css3, javascript, jQuery, PHP, mySQL, A-Frame. In Munich I've been getting into python.</p>
-		<p>My bachelor's thesis is about visualizing public transport of Budapest in VR in the browser. The user could see the local scene of nearest bus stops and their respective timetables by opening a website, and holding their phone in the right direction.</p>
-		<p>Currently I'm about to familiarize myself with node.js and with some python libraries, like pytorch and pandas.</p>
+		<p>Since highschool I'm drawn to web development. I tought myself html5 css3, javascript, jQuery, PHP, and finally I got into mySQL through a lecture. In Munich I've been getting into python for some machine learning and deep learning classes. Naturally, I've put my knowledge to use, and now I get notified on Telegram about new podcast episodes and XKCD comics.</p>
+		<p>My bachelor's thesis is about visualizing public transport stations of Budapest in VR in the browser. I created a virtual reality scene with bus stop entities, that have real life departure/arrival info displayed on them. javascript can access GPS info, so the user would be able to "track nearby stations" around him, just like those other apps, that track the stars on the sky. This principle, I argued, is easy to translate to many sorts of logistic tasks, and runs smoothly on phones even in the browser.</p>
+		<p>Currently I'm working part time at TDK, writing my master thesis, and designing a fully custom mechanical keyboard PCB. I've already ordered first prototypes for a 75% layout PCB, but I expect to have to go through a few revisions.</p>
 		<p>So that's me.</p>
-		<p class="posted_on">&middot; 2018-06-22 &middot;</p>
+		<p class="posted_on">&middot; 2020-05-06 &middot;</p>
+	</section>
+
+	<section>
+		<h1>Logic Analyzer Fun</h1>
+		<p>It's been a few days since I haven't been able to locate the bottleneck in an I2C bus. It's hard to tell just from code and debug info, on what rate I'm getting sensor data. And it's hard to "imagine" what really plays down in a 3200kHz communication protocol. It felt like I found logic analyzers out of the blue sky, but really I was too slow to catch up on the existense of these kinds of hardware debug accessories.</p>
+		<p>There's a great brand that I've heard many people recommend, but there's also cheap chinese clones for a tenth of the price, that do just as much, and that nobody recommends. Not being able to resist a €10.99 purchase, I ordered one on eBay. Before even trying any free open source software with it, I just tried the one from Saleae, which is free, and it worked with the clone flawlessly.</p>
+		<p>I don't know what I was expecting, but the usage of it is as trivial as it gets. Connect the channels to the logic level lines that you intend to sniff, connect ground too, assign the SDA and SCL to the matching channels, et violá. High and Low states get polled at 20MHz for a full second, and are then presented for analysis.The Saleae software debugs the bits even on hover, and translates them to hexadecimal, decimal, or ascii characters. These can then be exported to csv files too, if needed.</p>
+		<p>Even without translation, I instantly recognized some schemes. After requesting to read a register (3 separate bytes worth of blocks in the I2C clock channel) there would be an unnecessarily long looking string of bytes. Turns out I've been requesting a good 100-150 bytes of data through I2C instead of only asking for the 6 important bytes of the sensor data that I'm interested in. Prior to using a logic analyzer, I didn't imagine that this sloppyness would clog the bus.</p>
+		<p>Thinking back now, I feel so stupid having used selfie cameras to check infra leds in the past. Often I've "debugged" by asking the mcu to toggle a led during a process, just so I can confirm it's doing stuff. Toggling leds however takes time, and is hard to see, when it's supposed to happen every millisecond. Now I can debug data lines without changing the code, on the computer, like a pro.</p>
+		<p>Lately I have been feeling an increasing need (=searching for an excuse) to buy an oscilloscope, but this supercheap logic analyzer has got 99% of my needs covered for the foreseeable future.</p>
+		<p class="posted_on">&middot; 2020-05-06 &middot;</p>
+		<div class="clear" style="clear:both"></div>
 	</section>
 		
 	<section>
