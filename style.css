@@ -77,6 +77,10 @@ h2 {
 img {
 	width: 100%;
 }
+iframe {
+	margin: 2% auto;
+	display: block;
+}
 
 nav {
 	margin: 2% 2% 2% 0;
