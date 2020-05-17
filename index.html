@@ -1,233 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Armin's CV</title>
-	<meta charset="UTF-8" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="icon" href="img/ea.png" />
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" /><!-- css -->
-	<script src="https://code.jquery.com/jquery-3.5.0.js"></script><!-- jquery -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /><!-- Fancybox -->
-	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><!-- Also Fancybox -->
-</head>
-<body>
-	<header>
-		<div id="profile_pic"></div>
-		<div id="shorty">
-			<h1>Armin Emmert</h1>
-			<p>
-				<a class="social social-github" title="github" href="https://github.com/emmertarmin"></a>
-				<a class="social social-twitter" title="twitter" href="https://twitter.com/emmertarmin"></a>
-				<a class="social social-linkedin" title="linkedIn" href="https://www.linkedin.com/in/emmertarmin/"></a>
-				<a class="social social-instagram" title="instagram" href="https://www.instagram.com/emmertarmin/"></a>
-				<a class="social social-youtube" title="youtube" href="https://www.youtube.com/channel/UCXUajPkahDrJzNNLtbYUQuA"></a>
-				<a class="social social-facebook" title="facebook" href="https://www.facebook.com/emmertarmin"></a>
-			</p>
-		</div>
-	</header>
-	
-	<nav>
-		<div class="menu">
-			<div></div>
-			<div class="menubar"></div>
-			<div class="menubar"></div>
-			<div class="menubar"></div>
-			<div></div>
-		</div>
-		<ul>
-			<li><h2>Contact</h2></li>
-			<li><a href="mailto:emmertarmin@gmail.com">E-mail</a></li>
-			<li><a href="https://twitter.com/emmertarmin">Twitter</a></li>
-			<li><a href="https://github.com/emmertarmin">Github</a></li>
-			<li><a href="https://www.instagram.com/emmertarmin/">Instagram</a></li>
-			<li><a href="https://www.youtube.com/channel/UCXUajPkahDrJzNNLtbYUQuA">Youtube</a></li>
-			<li><a href="https://www.facebook.com/emmertarmin">Facebook</a></li>
-			<li><h2>Settings</h2></li>
-			<li style="line-height: 100%;"><a>
-				<label class="switch" style="float: left;">
-					<input type="checkbox" id="darkmode" name="darkmode">
-					<span class="slider"></span>
-				</label>
-				Dark mode
-				</a>
-			</li>
-			<!--
-			<li><a>hehehe</a></li>
-			<li><a>hehehe</a></li>
-			<li><a>hehehe</a></li>
-			<li><a>hehehe</a></li>
-			<li><a>hehehe</a></li>
-			<li><a>hehehe</a></li>
-			-->
-		</ul>
-		<div class="clear" style="clear:both"></div>
-	</nav>
-	
-	<section>
-		<h1>Let me introduce myself</h1>
-		<img class="img_left" src="img/profile_vue.jpg" />
-		<p>I'm 23 years old, hungarian, currently living in Munich, Germany.</p>
-		<p>Since October 2018 I'm enrolled at the Technical University of Munich (TUM) working on my Robotics, Cogniton, Intelligence Master's. Apart from that I've been working part time as a web-designer (mostly front end dashboard design, and some php, mysql) for 8 months. After that I joined the TDK Europe R&D center in Munich, where I've been designing PCBs, and developing Texas Instruments RF chips.</p>
-		<p>Before TUM, I got my BSc degree as a Mechatronical Engineer at the Technical University Budapest (BME), including having spent one semester in Karlsruhe (KIT). In these years I met the most amazing and interesting people, built long lasting friendships, and our core group still meets up regularly.</p>
-		<h2>Some interesting work of mine</h2>
-		<p>Since highschool I'm drawn to web development. I tought myself html5 css3, javascript, jQuery, PHP, and finally I got into mySQL through a lecture. In Munich I've been getting into python for some machine learning and deep learning classes. Naturally, I've put my knowledge to use, and now I get notified on Telegram about new podcast episodes and XKCD comics.</p>
-		<p>My bachelor's thesis is about visualizing public transport stations of Budapest in VR in the browser. I created a virtual reality scene with bus stop entities, that have real life departure/arrival info displayed on them. javascript can access GPS info, so the user would be able to "track nearby stations" around him, just like those other apps, that track the stars on the sky. This principle, I argued, is easy to translate to many sorts of logistic tasks, and runs smoothly on phones even in the browser.</p>
-		<p>Currently I'm working part time at TDK, writing my master thesis, and designing a fully custom mechanical keyboard PCB. I've already ordered first prototypes for a 75% layout PCB, but I expect to have to go through a few revisions.</p>
-		<p>So that's me.</p>
-		<p class="posted_on">&middot; 2020-05-06 &middot;</p>
-	</section>
-
-	<section>
-		<h1>Eggbot</h1>
-		<p>From previous years I had a pair of stepper motors and drivers, but I failed to make them work during experimentation, which was so discouraging at the time, that I just put them away and forgot about them.</p>
-		<p>Seeing the inner workings of my 3D printer gave me some insight into how beautiful and precise stepper configurations can be. Having learnt a bunch of lessons in electronics in the past years made me want to have a go at it again, and see if I can succeed this time.</p>
-		<p>There's tons of guides on how to wire stepper drivers, and sure enough, there's two main errors I noticed I had made. Firstly, there's always an enable pin that I'm ignoring. Just like with the 74HC595 digital multiplexers, there's an enable pin on A4988 stepper drivers too. In the final setup I'm using TMC2208 drivers, because they're much more silent due to more accurate wave generation. Secondly, turns out some stepper drivers won't run motors on 5V: they need rather 12 Volts, or more. I know for sure, that I counld't have produced that a fey years ago, but now that I have the necessary equippment to supply that voltage, the motors were finally turning.</p>
-		<p>Quick anecdote: I love the fact that my 3D printer fits inside a little shelf (desk space is too precious). It inspired me to look into small CNC machines for various purposes. I really like the <a href="https://youtu.be/O7gI6XYmP2o">ANT CNC</a>. It looks awesome, prudes amazing results when milling PCBs, and falls on the cheaper side of DIY CNCs. The team wanted it to fit in a drawer, and I really like that both motors stay fixed during operation. On the other hand, it probably isn't suited for a working of 40cm or bigger, and it probably won't handle aluminum. High quality linear rails, like the <a href="https://youtu.be/v5Wjyyeuzks">Cetus</a> has, aren't seen often in the DIY community, for obviuos reasons.</p>
-		<a class="fancybox" rel="eggbot" href="img/eggbot/eggbot-0020.jpg" title="OG Eggbot">
-			<img class="img_right" loading="lazy" src="img/eggbot/eggbot-0020.jpg" alt=""></img>
-		</a>
-		<p>So as I was browsing cnc related forums, I came across the <a href="https://www.thingiverse.com/thing:2245428">"Egg Painter Mini" instructions</a>, a derivative of the <a href="https://egg-bot.com/">OG Eggbot</a>. Perfect! I have steppers, I have servos, and I can print parts! I decided I would use the Inkscape extension and Arduino program as is, but that I would design my own parts to print.</p>
-		<p>In hindsight, the large walls I designed on the sides don't permit the pen to tilt to the extremes, and I should have accounted for that. But it's not too bad. What's more important is that larger eggs won't fit! I have only room for eggs that are of average size, or maybe 1mm larger, but anything beyond that won't fit.</p>
-		<p>The program is awesome though. I had to edit the Arduino program to define the correct pins, but apart from that it works fine. What's not explained though, is that if an Arduino IDE is open, or if Cura is open, the eggbot extension fails to connect to the serial port of the arduino. Both of those programs have to be closed, and it took me a good amount of time to figure that out.</p>
-		<p>The stepper drivers were getting hot really fast, and I noticed them pulling lots of current. That's because they have a little screw in them to adjust permissible current, which I haven't done yet, so they were overpowering the motors. Apart from doing that, it makes sense to incorporate the enable pins the way they're used in the program. Connecting the enable pins permanently to ground causes the steppers to draw current constantly, even when there is no workload. Cutting down on unnecessary power consumption reduces heat generation too.</p>
-		<p>Then I just experimented a bit with what the correct servo angles are, and what the real canvas size in Inkscape should be (the eggbot template document size I found is too big for some reason). A great tip for printing text is that if you want it to be written in "single lines" (like handwriting) instead of outlines, simply select the text object, then go to Extensions->Text->Hershey text. This will transform the characters into very nice paths. See for yourself:</p>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/R1jXS4Nm-MU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<p class="posted_on">&middot; 2020-05-09 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-		
-	<section>
-		<h1>Logic Analyzer Fun</h1>
-		<p>It's been a few days since I haven't been able to locate the bottleneck in an I2C bus. It's hard to tell just from code and debug info, on what rate I'm getting sensor data. And it's hard to "imagine" what really plays down in a 3200kHz communication protocol. It felt like I found logic analyzers out of the blue sky, but really I was too slow to catch up on the existense of these kinds of hardware debug accessories.</p>
-		<p>There's a great brand that I've heard many people recommend, but there's also cheap chinese clones for a tenth of the price, that do just as much, and that nobody recommends. Not being able to resist a €10.99 purchase, I ordered one on eBay. Before even trying any free <a href="https://sigrok.org/">open source</a> software with it, I just tried the one from Saleae, which is also free, and it worked with the noname clone flawlessly.</p>
-		<p>I don't know what I was expecting, but the usage of it is as trivial as it gets. Connect the channels to the logic level lines that you intend to sniff, connect ground too, assign the SDA and SCL to the matching channels, et violá. High and Low states get polled at 20MHz for a full second, and are then presented for analysis.The Saleae software debugs the bits even on hover, and translates them to hexadecimal, decimal, or ascii characters. These can then be exported to csv files too, if needed.</p>
-		<p>Even without translation, I instantly recognized some schemes. After requesting to read a register (3 separate bytes worth of blocks in the I2C clock channel) there would be an unnecessarily long looking string of bytes. Turns out I've been requesting a good 100-150 bytes of data through I2C instead of only asking for the 6 important bytes of the sensor data that I'm interested in. Prior to using a logic analyzer, I didn't imagine that this sloppyness would clog the bus.</p>
-		<p>Thinking back now, I feel so stupid having used selfie cameras to check infra leds in the past. Often I've "debugged" by asking the mcu to toggle a led during a process, just so I can confirm it's doing stuff. Toggling leds however takes time, and is hard to see, when it's supposed to happen every millisecond. Now I can debug data lines without changing the code, on the computer, like a pro.</p>
-		<p>Lately I have been "feeling an increasing need" (=searching for an excuse) to buy an oscilloscope, but this supercheap logic analyzer has got 99% of my needs covered for the foreseeable future.</p>
-		<p class="posted_on">&middot; 2020-05-06 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-		
-	<section>
-		<h1>Monoprice Select Mini V2</h1>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0020.jpg" title="">
-			<img class="img_center" loading="lazy" src="img/3dprint/3dprint-0020.jpg" alt=""></img>
-		</a>
-		<p>Recently I did the 3D printer course at my local maker-space, where they've got a bunch of Ultimakers. While I had great success at managing lasercuts in the allotted time, I felt uneasy about the possibility of letting a failed print run for 20 hours. Not knowing much about the topic, I also feared it would be hard for me to experiment with all the variables, like bed temperature, extrusion temperature, etc. But I also couldn't justify spending close to $1000 dollars for a 3D printer that I can just use for free at the maker-space. So when I came across the MPSMV2 on Conrad, I basically impulse-bought it. I don't usually buy stuff on the first day of discovery, but after seeing that the MonoPrice model has a heated bed and is compatible with CURA (the slicer program for the Ultimaker printers), I was convinced it's good enough for experimentation. €180 in my view is cheap enough to warrant not-perfect printing quality for the sake of experimentation. If ever in my life I plan to use or buy a serious printer, I'll know the ins and outs, because I'll have sat considerable hours working with and staring at a maker-grade one.</p>
-		<h2>First prints with PLA</h2>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0029.jpg" title="">
-			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0029.jpg" alt=""></img>
-		</a>
-		<p>I've had impressively few failed prints with PLA. The standard settings in Cura are great, and the only thing I've changed was the printhead temperature, which I lowered by 5°C to 195°C improve on stringing.</p>
-		<p>With the size of the machine, it fits on my tiny desk. The only trick I engaged is printing some spool holder bearing that let me put the spool on top of one of the speakers. Naturally, the bed-size is small as well. I did anticipate some extra work to make designs work that don't fit inside the working area of 120*120*120mm. But I hadn't truly considered the fact that a standard 6.25U spacebar would barely fit inside it (6.25*19.05=119.0625mm) until I had it stand on my desk.</p>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0028.jpg" title="">
-			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0028.jpg" alt=""></img>
-		</a>
-		<p>Because of the size, when i designed a test plate to see Cherry Stabilizers in action, I ended up having to cut corners (sorry). Rotating it by 45 degrees would make it fit, and now I've got a <a href="http://www.keyboard-layout-editor.com/##@_name=Stabilizer Test%3B&@_x:0.5&w:1.5%3B&=Tab&=Q&=W&_x:0.25&w:1.25&h:2&w2:1.5&h2:1&x2:-0.25%3B&=Enter%3B&@_x:0.5&w:2%3B&=Backspace&_w:1.75%3B&=Caps Lock%3B&@_a:7&w:6.25%3B&=">stupid layout</a> that allows me to see how different width keys will work out. I'm especially worried about the ISO Enter key about which I couldn't find any real info. There's no documentation I could find about where to place the switch underneath it, so I ended up reverse-engineering some open course PCBs, but I still want to see it in real life before ordering my own plate and PCB.</p>
-		<p>In action it's too loud tolet me comfortably sleep in the same room, so currently I'm not printing through the night. But it's not too loud to make me want to leave the computer during the day. Although I'll admit I'm biased; I enjoy watching the thing, and intercepting failed prints early on.</p>
-		<p>First I was impressed by how nuanced little details I'm able to print. I did however notice two complications:</p>
-		<p>Firstly, the first layer always gets squished a bit, which I tend to fix with a box cutter, when exact measurements matter. Later I learned it's called Elephant Foot, and the Prusa Slicer <a href="https://youtu.be/wy3u4DNh_XQ?t=50">adresses it</a> on default now. Fortunately I don't care about it enough to look up whether Cura has a similar feature or not.</p>
-		<p>Secondly, I had to re-drill some holes in post, as they came out too small. And since PLA has a relatively low melting temperature, it isn't well suited for machining. So I decided to print a test geometry to see whether inaccuracies are "reliable", because then I could account for it in the design.</p>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0031.jpg" title="">
-			<img class="img_center" loading="lazy" src="img/3dprint/3dprint-0031.jpg" alt=""></img>
-		</a>
-		<p>Sure enough, all the holes are about 0.2mm smaller, and all the outer dimensions are about 0.1mm thicker. That means if I want an M5 screw to thightly grip the material, a 5mm drill hole will work. And if I need it to loosely fit inside it, the drill hole better be 5.2-5.4mm in diameter.</p>
-		<h2>Some hardship with ABS</h2>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0022.jpg" title="">
-			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0022.jpg" alt="Benchy Cabriolet with ABS"></img>
-		</a>
-		<p>Not long after the first successes I decided I have to buy a few more spools with other colors, because this is fun. So I read some not-enough amount about the differences in filament material, and decided to buy ABS filament this time.</p>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0033.jpg" title="">
-			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0033.jpg" alt=""></img>
-		</a>
-		<p>I knew ABS needs higher temperatures, and that it's subject to warping, but I hadn't really anticipated how annoying warping would be. To be honest, I was more worried about the supposedly 80-90°C bed temperatures that were recommended everywhere, despite the default Cura setting being 75°C.</p>
-		<p>Benchy did great at first, and I was happy with the result, until the roof broke off for seemingly no reason. I quickly learned I had to put tape on the head cooler, otherwise the extruded material would warp and/or harden too soon, and not stick on small surfaces, like the B pillar of Benchy.</p>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0026.jpg" title="">
-			<img class="img_left" loading="lazy" src="img/3dprint/3dprint-0026.jpg" alt=""></img>
-		</a>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0027.jpg" title="">
-			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0027.jpg" alt=""></img>
-		</a>
-		<p>I managed to print some Cherry-style keycaps for my <a href="https://docs.keeb.io/bdn9-build-guide/">BDN9 inspired</a> hand wired macro pad. There's some sk6812 backlights installed, as I intend to test a number of <a href="https://qmk.fm/">QMK features</a> before I truly buy myself into the mechanical keyboard hobby. I've discovered one of my arduinos is a micro one, with an Atmel processor, which is supported by QMK. I was happy to discover this, because I initially didn't think there was a simple/cheap way for me to test the flashing and configuring of QMK, but things I already have at home are cheap, so this is great!</p>
-		<p>The <a href="https://www.thingiverse.com/thing:1573333">Cherry MX keycap</a> .stl file I found on Thingiverse proved to be impossible to slice in a smooth way. There's some advances on this front to be read about from <a href="https://tams.informatik.uni-hamburg.de/research/3d-printing/nonplanar_printing/index.php">Hamburg</a>, but no quick and easy way for me to try yet.</p>
-		<a class="fancybox" rel="mpsmv2" href="img/3dprint/3dprint-0023.jpg" title="">
-			<img class="img_right" loading="lazy" src="img/3dprint/3dprint-0023.jpg" alt=""></img>
-		</a>
-		<p>Sadly though, I failed four times on an smd tray. The first few layers seem to stick fine, but as the walls cool off, they introduce enough tension to tear up the corners later. Not sure how to go about this. I'm considering changing the geometry in a way where it's less affected by the warping of later layers, but now I miss the simplicity of PLA. PETG is said to unify advantages of both, but for now I want to try and make ABS work. I can semi-reliably print smaller parts at least, so that's a start!</p>
-		<p class="posted_on">&middot; 2020-04-11 &middot;</p>
-		<h2>Update</h2>
-		<p>Not long after the discouraging results I've learnt that printing ABS results in toxic fumes. This is not as well advertised as I'd like it to be. Unfortunately, I don't have the room to put the printer in a well ventilated place, so I decided to sell the ABS spools, and stick to PLA for now. In just 2 days, a local guy bought it all, as he is printing away 2 kilograms of filament a day to manufacture masks. Since he was sincere, well intentioned, and self-funded, we agreed in splitting the costs. I've lost quite some money in this adventure, but something good came out of it in the end.</p>
-		<p class="posted_on">&middot; 2020-05-06 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-		
-	<section>
-		<h1>Audi internship</h1>
-		<img class="img_right" loading="lazy" title="Source: https://twitter.com/Audi/status/1122183628874747910" src="img/audi.jpg"></img>
-		<p>After I won a scholarship from Audi Hungária, which helped me finance my 5th. semester in Kalrsruhe, they were happy to later see me apply for an internship.</p>
-		<p>So I became an engineering intern at the electric drivetrain manufacturing section. Our team worked out the nuances of manufacturing technology, which led up to the opening of the electric motor factory in the summer of 2018.</p>
-		<p>In the first few weeks I familiarized myself with the testing machines and operated them at times. This includes high voltage tests at various stages of assembling, leakage tests and an overview of the workings of the break tester.</p>
-		<h2>Excel for the win</h2>
-		<p>As I was fresh and new, I've been given a wide range of makeshift tasks, which surprisingly often sat me in front of an excel sheet. One time I was asked to import >1000 .CSV files into a sheet, which had a macro implemented, but was still incredibly tedious and repetitive. It took me two full days to finish. After that I started tinkering with some basic VBA codes from StackOverflow, and managed to write a program, that automatically read all of the 2000 files from the specified folder, and included them in the original sheet without screwing up the diagrams. I even made it make a safe copy of itself first, just to be sure. And I had it freeze the screen for the time it computes, and then popup when it's done.</p>
-		<p>The success I got from this new program made me update another Excel sheet we used often, which contained the daily report, and was sent by email daily to our boss. I had it's previous macro cleaned up at the code level, automated the aftertouch of coloring and styling (which always gets messed up when new data are imported). But the biggest trick was making the sheet compose an email (in two languages, with correct dates) and attach itself to it. We just had to press Ctrl+E, have a glance at the newly appeared email draft, and press send. The basic building blocks of all of these VBA programs are included in my <a href="https://github.com/emmertarmin/VBA">github</a> page.</p>
-		<p class="posted_on">&middot; 2019-03-20 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-		
-	<section>
-		<h1>Micromouse competition</h1>
-		<p>In 2017 a friend of mine and I decided to participate in the micromouse competition that was organized mostly by our university.</p>
-		<img class="img_left" loading="lazy" title="" src="img/micromouse_early.jpg"></img>
-		<p>First we decided on a rounded form factor for easy turning, and we designed to be narrow enough to be able to go diagonally in the labirinth, which still makes me chuckle a little bit.</p>
-		<p>We went through many design iterations in NI Ultiboard, until we were confident enough to order the PCB. Then came the soldering part, which needed many tries, and seemed even near impossible at times. I think it took us 4 mice to get the hang out of it, and at that point any one of us was quick to assemble a fifth one in a few hours.</p>
-		<img class="img_right" loading="lazy" title="" src="img/stm32.png"></img>
-		<p>STMCubeMX and Keil were our software of choice, which we used to initialize the processor, and to program it. In the world of $5 Arduinos it's actually amazing, how hard it is to get something like this to work from the ground up. But ultimately we managed to implement a PD Control on the otherwise erratic motors, and had the mouse go straight. We were also able to read sensor data (IR, Gyro, magnetic encoders). The picture on the left shows the actual pinout of our mouse.</p>
-		<img class="img_left" loading="lazy" title="" src="img/micromouse_dev.jpg"></img>
-		<p>The sensor readings seemed promising: we did tests in different light conditions, and the powerful IR emitters proved to be very confident, and showed a consistent curve. The range between 1-10cm is useful for measuring distance, before and after that the resolution won't hold up. The motor drivers seemed linear, even thought the motors themselves disagreed.</p>
-		<p>Here's the final runner:</p>
-		<img class="img_center" loading="lazy" title="" src="img/micromouse_late.jpg"></img>
-		<p class="posted_on">&middot; 2019-02-16 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-		
-	<section>
-		<h1>Breathing Budapest</h1>
-		<p>Seeing the work of <a href="https://tjukanov.org/">Tjukanov</a> I was inspired to use the public transport data of Budapest, and visualize the activity through the day. Here's the result:</p>
-		<video class="img_center" loading="lazy" controls muted loop>
-			<source src="img/breathing_budapest.mp4" type="video/mp4">
-				<p>Your browser does not support the video tag.</p>
-		</video>
-		<p>I wrote a php script that slowly but surely read through the trips by minute, gathered gps data of these routes, and passed it onto the page. Javascript would take over next, open a canvas, draw the frame (with very low opacity lines), and download it automatically to a folder. After downloading the frame, I'd load the page with the next timestamp in the url, and this went on for 2 hours. Not having to click "Ok" on the download prompt is something that's only hardly possible, but it is, which freed me up to watch a movie.</p>
-		<p>Admittedly this method feels like repairing the tourbillon of a Jaeger-LeCoultre Cronometer using tools provided by IKEA, but I enjoyed learning into these programming languages, and really wanted to succeed "without outside help".</p>
-		<p>In hindsight it shouldn't have taken me so long to realize that my messed up gps-to-coordinate conversion rotated Budapest by 90 degrees. It's fun to see in the finished project though, how the boulevard in the center is the only route going uninterrupted all night.</p>
-		<p class="posted_on">&middot; 2018-01-12 &middot;</p>
-		<div class="clear" style="clear:both"></div>
-	</section>
-			
-	<section>
-		<h1>Smart IoT Christmastree</h1>
-		<img class="img_center" loading="lazy" src="img/smarttree.jpg" />
-		<p>Summed up in one word, it's an off-the-grid, Bluetooth LE Smart Christmastree, running on Arduino and Raspberry Pi wirelessly in turns. It's fully off-the-grid, and has a charging time of <font face="Courier">405 Method Not Allowed</font> seconds. The individual LEDs are seperately addressed via blockchain technology.</p>
-		<p>There's a neural network running silently in circles, which enables the user to use the christmastree as a one-way chatbot, for when you just want no interrupts to happen.</p>
-		<p>Some cons, that I'm still trying to figure out: The resemblence to a real christmas tree places my project in the middle of the uncanny valley, which is why it's so well received in Japan.</p>
-		<p class="posted_on">&middot; 2017-12-19 &middot;</p>
-	</section>
-		
-	<!--<section>
-		<h1>I even wrote some blog posts:</h1>
-		<article>Menetrend</article>
-		<article>Home automation</article>
-		<article>Catan</article>
-		<article>Books I read recently</article>
-		<article>Retouching old photos</article>
-		<article>Simple video editing in Adobe Premiere and After Effects</article>
-		<article>Ez</article>
-		<article>Az</article>
-		<article>Emez</article>
-		<article>Amaz</article>
-		<div class="clear" style="clear:both"></div>
-	</section>-->
-	
-</body>
-	<script src="javascript.js"></script>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Armin Emmert</title>
+    <meta name="description" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png">
+  <link rel="icon" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preload" href="/assets/css/0.styles.625be6b0.css" as="style"><link rel="preload" href="/assets/js/app.c5c3e232.js" as="script"><link rel="preload" href="/assets/js/4.2301ef4d.js" as="script"><link rel="preload" href="/assets/js/10.1cf0cd84.js" as="script"><link rel="prefetch" href="/assets/js/11.d2ba0a31.js"><link rel="prefetch" href="/assets/js/12.fa403fb3.js"><link rel="prefetch" href="/assets/js/13.d1afaf70.js"><link rel="prefetch" href="/assets/js/14.d355a70d.js"><link rel="prefetch" href="/assets/js/15.49d8d227.js"><link rel="prefetch" href="/assets/js/16.0ebbb529.js"><link rel="prefetch" href="/assets/js/17.c585c744.js"><link rel="prefetch" href="/assets/js/18.415ca917.js"><link rel="prefetch" href="/assets/js/19.db81a35d.js"><link rel="prefetch" href="/assets/js/20.b823377c.js"><link rel="prefetch" href="/assets/js/3.0f416252.js"><link rel="prefetch" href="/assets/js/5.cab93536.js"><link rel="prefetch" href="/assets/js/6.9708b22d.js"><link rel="prefetch" href="/assets/js/7.dd39d1f6.js"><link rel="prefetch" href="/assets/js/8.b8249bf3.js"><link rel="prefetch" href="/assets/js/9.2a07a8d1.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.c67befde.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.625be6b0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-exact-active router-link-active"><img src="/vuepress-blog-logo.png" alt="Armin Emmert" class="logo"> <span class="site-name can-hide">Armin Emmert</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">Home</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div><div class="nav-item"><a href="/archive/" class="nav-link">Archive</a></div><div class="nav-item"><a href="/rss.xml" class="nav-link">
+  RSS Feed
+</a></div> <a href="https://github.com/emmertarmin/emmertarmin.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Repo
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">Home</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div><div class="nav-item"><a href="/archive/" class="nav-link">Archive</a></div><div class="nav-item"><a href="/rss.xml" class="nav-link">
+  RSS Feed
+</a></div> <a href="https://github.com/emmertarmin/emmertarmin.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Repo
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </div> <div class="home"><div class="hero"><!----> <h1>Armin Emmert</h1> <p class="description">
+      Some tagline
+    </p> <p class="action"><a href="https://github.com/bencodezen/vuepress-blog-boilerplate" target="_blank" rel="noopener noreferrer" class="nav-link external action-button">
+  Go To Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="features"><div class="feature"><h2>Feature 1</h2> <p>Feature Details</p></div><div class="feature"><h2>Feature 2</h2> <p>Feature Details</p></div><div class="feature"><h2>Feature 3</h2> <p>Feature Details</p></div><div class="feature"><h2>Feature 3</h2> <p>Feature Details</p></div><div class="feature"><h2>Feature 3</h2> <p>Feature Details</p></div><div class="feature"><h2>Feature 3</h2> <p>Feature Details</p></div></div> <div custom="" class="content default"></div> <div class="footer">
+    This is a footer
+  </div></div> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c5c3e232.js" defer></script><script src="/assets/js/4.2301ef4d.js" defer></script><script src="/assets/js/10.1cf0cd84.js" defer></script>
+  </body>
 </html>
